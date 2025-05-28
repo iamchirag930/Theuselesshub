@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Visit a completely random useless website!">
+  <title>The Useless Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeIn 2s ease-in-out;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(20, 20, 20, 0.9);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h1 {
+      font-size: 4rem;
+      animation: popUp 1.2s ease;
+      color: #ff4081;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      line-height: 1.2;
+    }
+
+    .text-line {
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .text-line:nth-child(1) {
+      font-size: 3.5rem;
+      color: #ff4081; /* Main color */
+    }
+
+    .text-line:nth-child(2) {
+      font-size: 3rem;
+      color: #f1fa8c; /* Accent color */
+    }
+
+    .text-line:nth-child(3) {
+      font-size: 3.5rem;
+      color: #50fa7b; /* Accent color */
+    }
+
+    .text-line:nth-child(4) {
+      font-size: 3rem;
+      color: #8be9fd; /* Accent color */
+    }
+
+    button {
+      background-color: #ff4081;
+      border: none;
+      color: white;
+      padding: 1rem 2.5rem;
+      font-size: 2rem;
+      cursor: pointer;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      animation: pulse 2s infinite;
+      box-shadow: 0 5px 15px rgba(255, 64, 129, 0.5);
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #ff4081, 0 5px 15px rgba(255, 64, 129, 0.7);
+      background-color: #e63972;
+    }
+
+    .ad-space {
+      width: 300px;
+      height: 250px;
+      background-color: #333;
+      border: 2px dashed #ff4081;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ff4081;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+
+    .ad-space:hover {
+      background-color: rgba(255, 64, 129, 0.1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes popUp {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      button {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+      }
+
+      .ad-space {
+        width: 90%;
+        height: 200px;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>
+      <div class="text-line">TAKE ME</div>
+      <div class="text-line">TO A</div>
+      <div class="text-line">USELESS</div>
+      <div class="text-line">WEBSITE</div>
+    </h1>
+    <button onclick="goToWebsite()">Take Me There</button>
+    <div class="ad-space">300x250 Ad Space</div>
+  </div>
+  <script>
+    const sites = [
+      "http://www.ismycomputeron.com/",
+      "http://www.nullingthevoid.com/",
+      "http://lacquerlacquer.com",
+      "https://clicking.toys/peg-solitaire/solid/",
+      "http://potatoortomato.com/",
+      "http://omfgdogs.com/",
+      "https://boringboringboring.com/",
+      "https://memory.toys/maze/easy/",
+      "http://pixelsfighting.com/",
+      "https://existentialcrisis.com/",
+      "https://dadlaughbutton.com/",
+      "https://zoomquilt.org/",
+      "https://loopedforinfinity.com/",
+      "https://end.city/",
+      "https://www.bouncingdvdlogo.com/"
+    ];
+
+    function goToWebsite() {
+      const randomSite = sites[Math.floor(Math.random() * sites.length)];
+      window.location.href = randomSite;
+    }
+  </script>
+</body>
+</html>
